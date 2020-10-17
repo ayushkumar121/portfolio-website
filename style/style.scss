@@ -1,0 +1,298 @@
+@import './base.scss';
+
+nav.overlay-nav{
+    height: 150px;
+    position: fixed;
+    z-index: 1;
+    background: #e8dfd8;
+    width: 100%;
+
+    #menu-button{
+        width: 128px;
+        height: 128px;
+       
+        background-color: transparent;
+        border: none;
+        outline: none;
+        
+        cursor: pointer;
+
+        top: 10px;
+        right: 10px;
+        position: fixed;
+        z-index: 2;
+    }
+
+    #title-card{
+        width: 96px;
+        height: 96px;
+
+        top: 30px;
+        left: 30px;
+        position: fixed;
+        z-index: 2;
+
+        background-color: #0a0a0a;
+
+        display: flex;
+        align-items: center; 
+
+        span{
+            font: 100% $primary-stack;
+
+            font-size: 18px;
+            color: white;
+            margin-left: 10px;
+        }
+    }
+
+    .overlay{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: -100%;
+        z-index: 1;
+        background-color: #0a0a0a;
+       
+        display: flex;
+        align-items: center;
+
+        .nav-links{ 
+            margin-left: 8%;
+            width: 100%;
+
+            a{
+                text-decoration: none;
+                font-weight: 600;
+                color: #fff;
+                font: 100% $primary-stack;
+                font-weight: 300;
+
+                @media screen and (max-width: $break-small) {
+                    font-size: 60px;
+                }
+                
+                @media screen and (min-width: $break-large) {
+                    font-size: 120px;
+                }
+
+                letter-spacing: 0.5px;
+                transition: letter-spacing 250ms;            
+            }
+
+            a:hover{
+                letter-spacing: 10px;
+                transition: letter-spacing 250ms;            
+            }
+
+            .side-links{
+                float: right;
+                margin-top: 50px;
+                margin-right: 50px;
+
+                a{
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: #fff;
+                    font: 100% $primary-stack;
+                    font-weight: 300;
+
+                    @media screen and (max-width: $break-small) {
+                        font-size: 18px;
+                    }
+                
+                    @media screen and (min-width: $break-large) {
+                        font-size: 48px;
+                    }
+
+                    letter-spacing: 0.5px;
+                    transition: letter-spacing 250ms; 
+                }
+            }
+        }
+    }
+}
+
+.home, .about, .project{
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.home-content, .about-content, .project-content{   
+    .slide{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+
+        @media screen and (min-width: $break-large) {
+            padding: 100px;
+        }
+    }
+    
+    #slide-1{
+        height: 800px;
+        background-color: #e8dfd8;
+
+        .row {
+            width: 100%;
+            
+            .col:nth-child(1){
+                @media screen and (max-width: $break-small) {
+                    margin-top: 90px;
+                    margin-left: 40px;
+                }
+
+                @media screen and (min-width: $break-large) {
+                    margin-left: 75px;
+                }
+            }
+
+            .col{
+                
+                .hero{
+                    width: 100%;
+    
+                    @media screen and (max-width: $break-small) {
+                        height: 300px;
+                    }
+                
+                    @media screen and (min-width: $break-large) {
+                        height: 500px;
+                    }
+                }
+                
+                @media screen and (max-width: $break-small) {
+                    width: 300px;
+                }
+            
+                @media screen and (min-width: $break-large) {
+                    width: 600px;
+                }
+                display: inline-block;           
+            }
+        }
+    }
+
+    .slide#slide-3{
+        height: 30vh;
+        background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+
+        h1{
+            margin: 30px 0;   
+            font-size: 24px;
+            
+            @media screen and (min-width: $break-large) {
+                font-size: 48px;
+            }
+        }
+
+        h2{
+            font-size: 18px;
+            
+            @media screen and (min-width: $break-large) {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+
+.team-container{
+    height: 500px;
+    overflow-y: scroll;
+    padding: 20px;
+
+    div{
+        display: inline-block;
+        margin-bottom: 20px;
+
+        img{
+            border: solid 5px #0a0a0a;
+        }
+
+        p{
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+    }
+}
+
+.services-container{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    
+    .row{
+    //   display: flex;
+    //   justify-content: center;
+    //  flex-direction: column;
+
+        .col{
+            margin:  20px;
+            display: inline-block;
+
+            img{
+                width: 170px;
+                align-self: center;
+            }
+
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+.outline-light{
+    -webkit-text-stroke: .8px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.outline-dark{
+    -webkit-text-stroke: .8px #0a0a0a;
+    -webkit-text-fill-color: transparent;  
+}
+
+.center-btn{
+    align-self: center;
+    height: 50px;
+    width: 300px;
+    text-decoration: none;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.center-btn div{
+    font-size: 28px;
+    height: 54px;
+    width: 300px;
+    text-align: center;
+
+    padding: 10px 0;
+}
+
+.center-btn div:nth-child(1){
+    color: #0a0a0a;
+}
+
+.center-btn div:nth-child(2){
+    color: #0a0a0a;
+    background-color: #fff;
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.center-btn:hover div:nth-child(2){
+    transform: translateY(-54px);
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
